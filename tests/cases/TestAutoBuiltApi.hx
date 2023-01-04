@@ -19,8 +19,8 @@ class TestAutoBuiltApi extends Test {
     }
 
     function testGenerateIntegers(async:Async) {
-        var jsonApi = new RandomApi();
-        jsonApi.generateIntegers(Sys.getEnv("RANDOM_DOT_ORG_API_KEY"), 6, 1, 6).then(response -> {
+        var randomApi = new RandomApi();
+        randomApi.generateIntegers(Sys.getEnv("RANDOM_DOT_ORG_API_KEY"), 6, 1, 6).then(response -> {
             Assert.equals("2.0", response.jsonrpc);
             Assert.isTrue(response.bitsUsed > 0);
             Assert.isTrue(response.bitsLeft > 0);
@@ -40,8 +40,8 @@ class TestAutoBuiltApi extends Test {
     }
 
     function testGenerateIntegerSequences(async:Async) {
-        var jsonApi = new RandomApi();
-        jsonApi.generateIntegerSequences(Sys.getEnv("RANDOM_DOT_ORG_API_KEY"), 2, [5, 1], [1, 1], [69, 26], [false, false], [10, 10]).then(response -> {
+        var randomApi = new RandomApi();
+        randomApi.generateIntegerSequences(Sys.getEnv("RANDOM_DOT_ORG_API_KEY"), 2, [5, 1], [1, 1], [69, 26], [false, false], [10, 10]).then(response -> {
             Assert.equals("2.0", response.jsonrpc);
             Assert.isTrue(response.bitsUsed > 0);
             Assert.isTrue(response.bitsLeft > 0);
