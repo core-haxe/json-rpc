@@ -32,10 +32,10 @@ class TestAutoBuiltApi extends Test {
                 total += n;
             }
             Assert.isTrue(total > 0);
-			async.done();
+            async.done();
         }, (error:JsonRpcError) -> {
-			Assert.fail();
-			async.done();
+            Assert.fail();
+            async.done();
         });
     }
 
